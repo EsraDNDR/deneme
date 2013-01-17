@@ -1,0 +1,32 @@
+
+<h1>Listing loans</h1>
+
+<table class = 'table table - stripped'>
+  <tr>
+    <th>Debt</th>
+    <th>Credit</th>
+    <th>Friend</th>
+    <th>From time</th>
+    <th>Due time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @loans.each do |loan| %>
+  <tr>
+    <td><%= loan.debt %></td>
+    <td><%= loan.credit %></td>
+    <td><%= loan.friend_id %></td>
+    <td><%= loan.from_time %></td>
+    <td><%= loan.due_time %></td>
+    <td><%= link_to 'Show', loan, :class => 'btn btn-mini btn-success' %></td>
+    <td><%= link_to 'Edit', edit_loan_path(loan), :class =>'btn btn-mini btn-warning' %></td>
+    <td><%= link_to 'Destroy', loan, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Loan', new_loan_path, :class =>'btn btn-mini btn-primary' %>

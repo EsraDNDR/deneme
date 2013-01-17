@@ -1,0 +1,25 @@
+
+<p id="notice"><%= notice %></p>
+
+<% @loan = Loan.sum('debt', :group => :friend_id)[@friend.id] %>
+<% @loan = Loan.sum('credit', :group => :friend_id) [@friend.id] %>
+<p>
+  <b>Name:</b>
+  <%= @friend.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @friend.email %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @friend.user_id %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_friend_path(@friend), :class => 'btn btn-mini btn-info'%> |
+<%= link_to 'Back', friends_path, :class => 'btn btn-mini btn-info'%> |
+<%= link_to 'Loan', new_loan_path(:friend_id => @friend), :class => 'btn btn-mini btn-info'  %>

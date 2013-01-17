@@ -1,0 +1,22 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "BORÇ - SAVAR", '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home",    root_path %></li>
+          <li><%= link_to "Friends",  friends_path  %></li>
+          <% if current_user %>
+
+           Signed in as <strong><%= current_user.name %></strong>!
+           </br>
+           <%= link_to "Sign out", signout_path, id: "sign_out" %>
+          <% else %>
+          </br>
+           <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <b>Debt:</b>
+  <%= @loan.debt %>
+</p>
+
+<p>
+  <b>Credit:</b>
+  <%= @loan.credit %>
+</p>
+
+<p>
+  <b>Friend:</b>
+  <%= @loan.friend_id %>
+</p>
+
+<p>
+  <b>From time:</b>
+  <%= @loan.from_time %>
+</p>
+
+<p>
+  <b>Due time:</b>
+  <%= @loan.due_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_loan_path(@loan), :class => 'btn btn-mini btn-info' %> |
+<%= link_to 'Back', loans_path, :class => 'btn btn-mini btn-info' %>
