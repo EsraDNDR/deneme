@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <% @loan = Loan.sum('debt', :group => :friend_id)[@friend.id] %>
-<% @loan = Loan.sum('credit', :group => :friend_id) [@friend.id] %>
+<% @credit = Loan.sum('credit', :group => :friend_id) [@friend.id] %>
 <p>
   <b>Name:</b>
   <%= @friend.name %>
@@ -17,6 +17,17 @@
   <b>User:</b>
   <%= @friend.user_id %>
 </p>
+
+<p>
+	<b>Loan:</b>
+	<%= @loan %>
+</p>
+
+<p>
+	<b>Credit:</b>
+	<%=@credit %>
+
+
 
 
 
