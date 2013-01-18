@@ -31,7 +31,7 @@
 
 <p>
   <b>Remaining Loan:</b>
-  <% if @remainLoan < 0 %>
+  <% if @remainLoan <= 0 || @remainLoan == nil %>
     <%= 'No Loan to pay anymore' %>
   <% else %>
     <%= @remainLoan %>
