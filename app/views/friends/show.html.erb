@@ -3,6 +3,7 @@
 
 <% @loan = Loan.sum('debt', :group => :friend_id)[@friend.id] %>
 <% @credit = Loan.sum('credit', :group => :friend_id) [@friend.id] %>
+<% @remainLoan = @loan - @credit %>
 <p>
   <b>Name:</b>
   <%= @friend.name %>
@@ -28,8 +29,14 @@
 	<%=@credit %> $
 </p>
 
-
-
+<p>
+  <b>Remaining Loan:</b>
+  <% if @remainLoan < 0 %>
+    <p>No Loan to pay anymore</p>
+  <% else %>
+    <%= @remainLoan %>
+  <% end %>
+</p>
 
 
 <%= link_to 'Edit', edit_friend_path(@friend), :class => 'btn btn-mini btn-info'%> |
