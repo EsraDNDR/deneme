@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'omniauth-facebook'
-gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'bootstrap-sass'
 
 # Bundle edge Rails instead:
